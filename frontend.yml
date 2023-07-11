@@ -23,8 +23,6 @@
     path: /usr/share/nginx/html
     state: directory
 
-
-
 #echo -e "\e[33mDownloading frontend content\e[0m"
 #curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>/tmp/roboshop.log
  #echo -e "\e[33mExtracting frontend content\e[0m"
