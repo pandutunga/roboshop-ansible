@@ -2,22 +2,16 @@
   hosts: all
   become: yes
   tasks:
-    #echo -e "\e[33mCopying Mongodb Repo\e[0m"
-    #cp mongodb.repo /etc/yum.repos.d/mongodb.repo &>>/tmp/roboshop.log
     - name: Copying Mongodb Repo
       ansible.builtin.copy:
         src: mongodb.repo
         dest: /etc/yum.repos.d/mongodb.repo
 
-#echo -e "\e[33mInstalling MongoDB server\e[0m"
-#yum install mongodb-org -y &>>/tmp/roboshop.log
     - name: Install MongoDB
       ansible.builtin.yum:
         name: mongodb-org
         state: latest
 
-#echo -e "\e[33mUpdate MongoDB listen address\e[0m"
-#sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
     - name: Update MongoDB listen Address
       ansible.builtin.replace:
         path: /etc/mongod.conf
