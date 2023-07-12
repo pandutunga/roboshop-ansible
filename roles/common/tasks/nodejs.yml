@@ -17,7 +17,7 @@
 
 - name: load schema
   ansible.builtin.import_tasks:
-    file: mongodb_schema_setup.yml
+    file: mongo_schema_setup.yml
   when: load_schema
 
 - name: SystemD setup
